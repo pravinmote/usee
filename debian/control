@@ -1,0 +1,6 @@
+Package: BComp
+Version: 1.0
+Maintainer: xxx
+Architecture: i386 
+Description: Package created using compiled binaries
+
