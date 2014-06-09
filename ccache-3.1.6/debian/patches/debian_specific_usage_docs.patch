@@ -1,0 +1,33 @@
+Description: Update manual page with Debian-specific instructions
+Author: Joel Rosdahl <joel@debian.org>
+
+Index: ccache/ccache.1
+===================================================================
+--- ccache.orig/ccache.1	2011-05-29 17:56:17.000000000 +0200
++++ ccache/ccache.1	2011-06-25 23:32:51.762776410 +0200
+@@ -157,19 +157,18 @@
+ .sp
+ There are two ways to use ccache\&. You can either prefix your compilation commands with \fBccache\fR or you can let ccache masquerade as the compiler by creating a symbolic link (named as the compiler) to ccache\&. The first method is most convenient if you just want to try out ccache or wish to use it for some specific projects\&. The second method is most useful for when you wish to use ccache for all your compilations\&.
+ .sp
+-To use the first method, just make sure that \fBccache\fR is in your \fBPATH\fR\&.
++To use the second method on a Debian system, it's easiest to just prepend \fI/usr/lib/ccache\fR to your \fBPATH\fR\&. \fI/usr/lib/ccache\fR contains symlinks for all compilers currently installed as Debian packages\&.
+ .sp
+-To use the symlinks method, do something like this:
++Alternatively, you can create any symlinks you like yourself like this:
+ .sp
+ .if n \{\
+ .RS 4
+ .\}
+ .nf
+-cp ccache /usr/local/bin/
+-ln \-s ccache /usr/local/bin/gcc
+-ln \-s ccache /usr/local/bin/g++
+-ln \-s ccache /usr/local/bin/cc
+-ln \-s ccache /usr/local/bin/c++
++ln \-s /usr/bin/ccache /usr/local/bin/gcc
++ln \-s /usr/bin/ccache /usr/local/bin/g++
++ln \-s /usr/bin/ccache /usr/local/bin/cc
++ln \-s /usr/bin/ccache /usr/local/bin/c++
+ .fi
+ .if n \{\
+ .RE
