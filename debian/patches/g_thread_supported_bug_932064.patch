@@ -1,0 +1,24 @@
+From a32b9064eafa24bd13986d82e9abf9da896ca7ff Mon Sep 17 00:00:00 2001
+From: Jean-Louis Martineau <martineau@zmanda.com>
+Date: Sun, 11 Mar 2012 16:27:35 +0000
+Subject: =?UTF-8?q?*=20common-src/glib-util.c:=20g=5Fthread=5Fsupported=20al?=
+ =?UTF-8?q?ways=20return=20TRUE=20on=0A=20=20newer=20version.?=
+
+git-svn-id: https://amanda.svn.sourceforge.net/svnroot/amanda/amanda/trunk@4594 a8d146d6-cc15-0410-8900-af154a0219e0
+---
+ common-src/glib-util.c |    2 ++
+ 1 files changed, 2 insertions(+)
+
+--- a/common-src/glib-util.c
++++ b/common-src/glib-util.c
+@@ -42,7 +42,9 @@
+      * is initialized) */
+ #ifdef HAVE_LIBCURL
+ # ifdef G_THREADS_ENABLED
++#  if (GLIB_MAJOR_VERSION < 2 || (GLIB_MAJOR_VERSION == 2 && GLIB_MINOR_VERSION < 31))
+     g_assert(!g_thread_supported()); /* assert threads aren't initialized yet */
++#  endif
+ # endif
+     g_assert(curl_global_init(CURL_GLOBAL_ALL) == 0);
+ #endif
+

@@ -1,0 +1,7 @@
+etc/amanda
+etc/xinetd.d
+usr/sbin
+usr/share/doc/amanda-server/examples
+usr/share/lintian/overrides
+var/lib/amanda
+var/log/amanda
