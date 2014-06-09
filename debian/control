@@ -1,0 +1,20 @@
+Source: ccache
+Section: devel
+Priority: optional
+Maintainer: Y Giridhar Appaji Nag <appaji@debian.org>
+Uploaders: Joel Rosdahl <joel@debian.org>
+Build-Depends: debhelper (>> 6.0.7~), autotools-dev, zlib1g-dev
+Standards-Version: 3.9.2
+Homepage: http://ccache.samba.org
+Vcs-git: git://git.debian.org/git/collab-maint/ccache.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/ccache.git;a=summary
+
+Package: ccache
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: distcc
+Description: Compiler cache for fast recompilation of C/C++ code
+ ccache is a compiler cache. It speeds up recompilation by caching
+ previous compilations and detecting when the same compilation is
+ being done again. Supported languages are C, C++, Objective-C and
+ Objective-C++.
